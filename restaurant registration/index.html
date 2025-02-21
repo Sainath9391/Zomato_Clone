@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="delivery.png" alt="Restaurant Logo" style="width: 100%; border-radius: 50%;">
+        </div>
+        
+        <nav>
+            <a href="#" class="nav-link" onclick="showPage('register')">
+                <i data-feather="user-plus"></i>
+                Register
+            </a>
+            <a href="#" class="nav-link" onclick="showPage('login')">
+                <i data-feather="log-in"></i>
+                Login
+            </a>
+            <a href="#" class="nav-link" onclick="showPage('orders')">
+                <i data-feather="shopping-bag"></i>
+                Orders
+            </a>
+            <a href="#" class="nav-link" onclick="showPage('add-restaurant')">
+                <i data-feather="home"></i>
+                Add Restaurant
+            </a>
+            <a href="#" class="nav-link" onclick="showPage('add-menu-item')">
+                <i data-feather="coffee"></i>
+                Add Menu Item
+            </a>
+            <a href="#" class="nav-link" onclick="showPage('all-menu-items')">
+                <i data-feather="list"></i>
+                All Menu Items
+            </a>
+        </nav>
+        
+    </div>
+
+    <div class="main-content">
+        <!-- Add Restaurant Page -->
+        <div id="add-restaurant" class="page">
+            <div class="card">
+                <h2 class="card-title">Add New Restaurant</h2>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Restaurant Name</label>
+                        <input type="text" class="form-input" placeholder="Enter restaurant name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="Enter email address">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-input" placeholder="Enter phone number">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Address</label>
+                        <textarea class="form-input" rows="4" placeholder="Enter restaurant address"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Cuisine Type</label>
+                        <input type="text" class="form-input" placeholder="Enter cuisine type">
+                    </div>
+                    <button type="submit" class="btn">Add Restaurant</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Add Menu Item Page -->
+        <div id="add-menu-item" class="page" style="display: none;">
+            <div class="card">
+                <h2 class="card-title">Add New Menu Item</h2>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Item Name</label>
+                        <input type="text" class="form-input" placeholder="Enter item name">
+                    </div>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Price</label>
+                            <input type="number" class="form-input" placeholder="Enter price">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Category</label>
+                            <select class="form-input">
+                                <option value="">Select category</option>
+                                <option value="appetizer">Appetizer</option>
+                                <option value="main-course">Main Course</option>
+                                <option value="dessert">Dessert</option>
+                                <option value="beverage">Beverage</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-input" rows="4" placeholder="Enter item description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Item Image</label>
+                        <input type="file" class="form-input" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn">Add Menu Item</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- All Menu Items Page -->
+        <div id="all-menu-items" class="page" style="display: none;">
+            <div class="card">
+                <h2 class="card-title">All Menu Items</h2>
+                <input type="text" class="form-input search-input" placeholder="Search menu items...">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="menu-items-table-body">
+                        <!-- Menu items will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Orders Page -->
+        <div id="orders" class="page" style="display: none;">
+            <div class="card">
+                <h2 class="card-title">Orders</h2>
+                <input type="text" class="form-input search-input" placeholder="Search orders...">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-table-body">
+                        <!-- Orders will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Login Page -->
+        <div id="login" class="page" style="display: none;">
+            <div class="card">
+                <h2 class="card-title">Login</h2>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-input" placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Register Page -->
+        <div id="register" class="page" style="display: none;">
+            <div class="card">
+                <h2 class="card-title">Register</h2>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Restaurant Name</label>
+                        <input type="text" class="form-input" placeholder="Enter restaurant name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-input" placeholder="Enter your password">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-input" placeholder="Confirm your password">
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="script.js"></script>
+</body>
+</html>

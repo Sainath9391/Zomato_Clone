@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - Restaurant Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>📲 Generate Restaurant QR Code</h2>
+        
+        <form id="qrForm">
+            <div class="input-group">
+                <input type="text" id="restaurantName" name="restaurantName" placeholder="Restaurant Name" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="text" id="location" name="location" placeholder="Restaurant Location" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Generate QR</button>
+        </form>
+
+        <div class="qr-container" id="qrContainer">
+            <h3>📌 Scan to View Menu</h3>
+            <div id="qrcode"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

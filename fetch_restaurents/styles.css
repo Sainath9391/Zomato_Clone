@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: #d35400;
+}
+
+.btn {
+    padding: 10px 15px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #c0392b;
+}
+
+.restaurant-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.restaurant {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.restaurant:hover {
+    background: #f5c469;
+}
+
+.dish-list {
+    display: none;
+    margin-top: 10px;
+}
+
+.dish {
+    background: #f9e79f;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+.dish:hover {
+    background: #f5c469;
+}
